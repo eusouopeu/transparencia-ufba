@@ -10,15 +10,15 @@ export default function DashSummaryContainer() {
   return (
     <section className='summary-container'>
       <SummaryCards title='Receita' value='R$ 2.007.885.471,13' />
-      <SummaryCards title='Alunos' value={formatNumber(alunos, 'pt-BR')} />
+      <SummaryCards title='Alunos' value={Intl.NumberFormat('pt-BR').format(alunos)} />
 
       <div className='flex flex-row flex-wrap justify-between gap-4'>
-      <SummaryCards title='Graduação' value={formatNumber(36257, 'pt-BR')} className='w-[45%] justify-between '/>
-      <SummaryCards title='Mest. Acad.' value={formatNumber(ufbaData['Pos-Graduação']['Mestrado Acadêmico']['Matriculas'], 'pt-BR')} className='w-[45%] justify-between ' />
-      <SummaryCards title='Mest. Prof.' value={formatNumber(ufbaData['Pos-Graduação']['Mestrado Profissional']['Matriculas'], 'pt-BR')}  className='w-[45%] justify-between '/>
-      <SummaryCards title='Doutorado' value={formatNumber(ufbaData['Pos-Graduação']['Doutorado']['Matriculas'], 'pt-BR')} className='w-[45%] justify-between ' />
+      <SummaryCards title='Graduação' value={Intl.NumberFormat('pt-BR').format(36257)} className='w-[45%] justify-between '/>
+      <SummaryCards title='Mest. Acad.' value={Intl.NumberFormat('pt-BR').format(ufbaData['Pos-Graduação']['Mestrado Acadêmico']['Matriculas'])} className='w-[45%] justify-between ' />
+      <SummaryCards title='Mest. Prof.' value={Intl.NumberFormat('pt-BR').format(ufbaData['Pos-Graduação']['Mestrado Profissional']['Matriculas'])}  className='w-[45%] justify-between '/>
+      <SummaryCards title='Doutorado' value={Intl.NumberFormat('pt-BR').format(ufbaData['Pos-Graduação']['Doutorado']['Matriculas'])} className='w-[45%] justify-between ' />
       </div>
-      <SummaryCards title='Programas de Extensão' value={formatNumber(extensao, 'pt-BR')} />
+      <SummaryCards title='Programas de Extensão' value={Intl.NumberFormat('pt-BR').format(extensao)} />
     </section>
   )
 }

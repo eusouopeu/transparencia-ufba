@@ -4,8 +4,6 @@
  * @format
  */
 
-import { formatNumber } from 'chart.js/helpers'
-
 // import CountyPieChart from '../../components/charts/pie/CountyPieChart'
 import SummaryCards from '../../components/SummaryCards'
 import { mediaGastos, maiorGasto } from '../../utils/TransactionsComparison'
@@ -17,11 +15,11 @@ export default function TransactionsSummaryContainer() {
 		<section className='summary-container'>
 			<SummaryCards
 				title='Maior gasto'
-				value={`R$ ${formatNumber(maiorValor, 'pt-BR')}`}
+				value={`R$ ${Intl.NumberFormat('pt-BR').format(maiorValor)}`}
 			/>
 			<SummaryCards
 				title='Valor médio (transação)'
-				value={`R$ ${formatNumber(mediaGastos, 'pt-BR')}`}
+				value={`R$ ${Intl.NumberFormat('pt-BR').format(mediaGastos)}`}
 			/>
 		</section>
 	)
